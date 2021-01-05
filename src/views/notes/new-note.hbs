@@ -1,0 +1,49 @@
+{{#each errors}}
+<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>C'mon man!</strong> {{text}}
+</div>
+{{/each}}
+<div class="col-md4 mx-auto">
+  <div class="card">
+    <div class="card-body">
+      <form action="/notes/new-note" method="POST">
+        <fieldset>
+          <legend>Nota</legend>
+          <div class="form-group">
+            <label for="exampleTitle">Ingrese el nombre de la nota</label>
+            <input class="form-control" type="text" name="title" id="exampleTitle">
+          </div>
+          <div class="form-group">
+            <label for="exampleSelect1">Desea que esta nota sea publica?</label>
+            <select class="form-control" name="privacidad" id="exampleSelect1">
+              <option value="1">Si</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleTextarea">Descripcion de la nota</label>
+            <textarea class="form-control" name="description" id="exampleTextarea" rows="3" autofocus></textarea>
+          </div>
+          <fieldset class="form-group">
+            <legend>Es un recordatorio o una enseñanza?</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="select" id="optionsRadios1" value="danger"
+                  checked="">
+                Recordatorio
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="select" id="optionsRadios2" value="success">
+                Enseñanza
+              </label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary" id="testBoton">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
